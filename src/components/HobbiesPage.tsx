@@ -19,33 +19,9 @@ export const HobbiesPage: React.FC<HobbiesPageProps> = ({ isDark }) => {
   const spaceshipRef = useRef({ x: 150, y: 150, radius: 10, angle: -Math.PI / 2 });
   const starsRef = useRef<{ x: number; y: number; collected: boolean }[]>([]);
 
-  // Sound Synthesizer Trigger function (sine wave synth)
+  // Sound Synthesizer Trigger function (disabled by user request)
   const playVibeTone = (hz: number) => {
-    try {
-      const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
-      const osc = audioCtx.createOscillator();
-      const filter = audioCtx.createBiquadFilter();
-      const gain = audioCtx.createGain();
-
-      osc.type = selectedVibe === 'ambient' ? 'sine' : selectedVibe === 'ripple' ? 'sawtooth' : 'triangle';
-      osc.frequency.setValueAtTime(hz, audioCtx.currentTime);
-
-      if (selectedVibe === 'ripple') {
-        filter.type = 'lowpass';
-        filter.frequency.setValueAtTime(800, audioCtx.currentTime);
-        osc.connect(filter);
-        filter.connect(gain);
-      } else {
-        osc.connect(gain);
-      }
-
-      gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
-
-      gain.connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + 0.3);
-    } catch (_) {}
+    // Silent mode active
   };
 
   const padFrequencies = [261.63, 293.66, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25]; // C4 to C5 notes
