@@ -77,7 +77,6 @@ export default function App() {
               <span className="font-display font-extrabold text-base tracking-tight hover:text-amber-500 transition cursor-pointer">
                 {USER_INFO.fullName}
               </span>
-              <span className="text-[9px] font-mono block text-zinc-500">Portfolio Studio v3</span>
             </div>
           </div>
 
@@ -86,9 +85,7 @@ export default function App() {
             <button
               onClick={() => executeWarpTransitTo('about')}
               className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer ${
-                currentPage === 'about'
-                  ? 'bg-amber-400 text-slate-950 font-extrabold shadow-sm'
-                  : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-zinc-100'
+                currentPage === 'about'? 'bg-amber-400 text-slate-950 font-extrabold shadow-sm': 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-zinc-100'
               }`}
             >
               About
@@ -111,17 +108,11 @@ export default function App() {
                   : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-zinc-100'
               }`}
             >
-              Sandbox
+              Hobbies and Interests
             </button>
           </nav>
 
           <div className="flex items-center gap-4">
-            {/* Active status indicator */}
-            <div className="hidden md:flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-mono uppercase border border-emerald-500/20 font-bold">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              Status: Active
-            </div>
-
             {/* Premium Theme Switcher */}
             <ThemeToggle isDark={isDark} setIsDark={setIsDark} />
           </div>

@@ -2,47 +2,39 @@ import { Trait, Passion, Project, Experience, Hobby } from './types';
 
 export const USER_INFO = {
   fullName: "Aseel",
-  pronouns: "they/them",
-  title: "Creative Visual Developer & Design Enthusiast",
-  tagline: "Building whimsical digital playgrounds where art meets clean code.",
+  pronouns: "she/her",
+  title: "Software Developer & QA Tester",
+  tagline: "Building video games and animation clips where art meets clean code!",
   avatar: "/src/assets/images/whimsical_avatar_casual_1780339203339.png",
   rocketImg: "/src/assets/images/whimsical_rocket_canvas_1780339220988.png",
   hobbiesImg: "/src/assets/images/whimsical_hobbies_1780322435482.png",
-  bio: "Hi, I'm Aseel! I am a visual designer and developer passionate about crafting interactive, organic, and emotionally engaging web playgrounds. I view code not just as instructions, but as a rich physical canvas to tell stories, connect people, and make the web feel like a colorful, tactile adventure. I love working at the intersection of UI animations, vector simulations, and custom web audio."
+  bio: "I am a Software Developer passionate about crafting and testing interactive, and emotionally engaging Video Games and Simulators! I love working at the intersection of UI animations, vector simulations."
 };
 
 export const TRAITS: Trait[] = [
   {
-    id: "optimist",
-    name: "Caffeine-Powered Optimism",
-    icon: "Sparkles",
-    color: "from-amber-400 to-orange-500",
-    percentage: 95,
-    description: "I believe every engineering block has a beautiful, elegant solution. I bring positive energy, laughter, and high-enthusiasm brainstorms to every team meeting!"
-  },
-  {
-    id: "designer",
-    name: "Pixel Passion",
+    id: "Passion for Technology",
+    name: "Passion for Technology",
     icon: "Palette",
     color: "from-emerald-400 to-teal-500",
     percentage: 90,
-    description: "I obsess over micro-interactions, spring animations, typography scale, responsive rhythm, and satisfying hover feed. Details make the product!"
+    description: "I obsess over creating animations, fast-paced video games, and responsive rhythm. I believe details make the perfect product!"
   },
   {
-    id: "storyteller",
-    name: "Whimsical Storytelling",
-    icon: "BookOpen",
+    id: "Beyond Technology",
+    name: "Beyond Technology",
+    icon: "nature",
     color: "from-sky-400 to-indigo-500",
     percentage: 85,
-    description: "I love structuring user journeys as quests. Whether compiling documentation, onboarding users, or creating landing flows, storytelling connects on a deeper level."
+    description: "I love meeting new people, having lots of hobbies, connecting with nature, and baking cinnamon rolls from time to time! I genrally am a person who enjoys learning new things in all aspects of life!"
   },
   {
     id: "explorer",
-    name: "Incurable Curiosity",
+    name: "Hobbies related to tech",
     icon: "Compass",
     color: "from-rose-400 to-amber-500",
     percentage: 99,
-    description: "Always learning, building, and exploring! From WebGL and spatial audio synthesizers to deep database schemas, I chase down how things work."
+    description: "I am always learning, building, and exploring new things. I do lots of video games and soldering projects for fun!"
   }
 ];
 

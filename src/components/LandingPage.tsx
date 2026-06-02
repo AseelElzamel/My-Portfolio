@@ -3,25 +3,6 @@ import { TRAITS, PASSIONS, USER_INFO } from '../data';
 import { Sparkles, Heart, Star, Send, ArrowRight, UserCheck, Terminal, Award } from 'lucide-react';
 import { Trait } from '../types';
 
-const playBeep = (freq = 440, duration = 0.1, type: OscillatorType = 'sine') => {
-  try {
-    const audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
-    const osc = audioCtx.createOscillator();
-    const gainNode = audioCtx.createGain();
-    
-    osc.type = type;
-    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-    
-    gainNode.gain.setValueAtTime(0.08, audioCtx.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration);
-    
-    osc.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-    
-    osc.start();
-    osc.stop(audioCtx.currentTime + duration);
-  } catch (e) {}
-};
 
 interface LandingPageProps {
   isDark: boolean;
@@ -54,13 +35,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
           
           {/* Hero Left Content */}
           <div className="lg:col-span-7 space-y-6">
-            <span className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold font-mono tracking-wider uppercase border ${
-              isDark 
-                ? 'bg-amber-400/10 text-amber-300 border-amber-400/20' 
-                : 'bg-amber-100 text-amber-800 border-amber-200'
-            }`}>
-              <Sparkles className="h-3.5 w-3.5 text-amber-500 animate-spin duration-3000" /> Creative Engine: Active
-            </span>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-sans tracking-tight leading-tight">
               Hello, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-emerald-500 to-orange-500 dark:from-amber-400 dark:via-emerald-400">{USER_INFO.fullName}</span>!
@@ -79,28 +53,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
               <a 
                 href="#traits"
                 className={`inline-flex items-center gap-2 px-5 py-3 rounded-2xl font-bold font-sans text-sm shadow-md transition-all duration-300 ${
-                  isDark 
-                    ? 'bg-amber-400 text-slate-950 hover:bg-amber-300 active:scale-95' 
-                    : 'bg-emerald-600 text-white hover:bg-emerald-700 active:scale-95'
+                  isDark? 'bg-amber-400 text-slate-950 hover:bg-amber-300 active:scale-95': 'bg-emerald-600 text-white hover:bg-emerald-700 active:scale-95'
                 }`}
-              >
-                Let's Explore Traits
+              >More about me!
                 <ArrowRight className="h-4 w-4" />
               </a>
 
-              <button 
-                onClick={() => {
-                  const el = document.getElementById('rocket-dashboard');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className={`inline-flex items-center gap-2 px-5 py-3 rounded-2xl font-semibold font-sans text-sm border transition-all duration-300 ${
-                  isDark
-                    ? 'bg-slate-800 border-slate-700/80 text-zinc-300 hover:text-white'
-                    : 'bg-[#EAE5D3]/45 border-[#DCD6C2] text-slate-700 hover:bg-[#EAE5D3]'
-                }`}
-              >
-                Launch Navigation Panel
-              </button>
+
             </div>
           </div>
 
@@ -111,10 +70,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
               <div className="absolute inset-0 border-2 border-dashed border-zinc-400/30 rounded-full animate-[spin_40s_linear_infinite]" />
               <div className="absolute inset-2 border border-dotted border-amber-400/40 rounded-full animate-[spin_20s_linear_infinite_reverse]" />
               
-              {/* Decorative rocket badge */}
-              <div className="absolute -top-1 -right-1 z-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl p-2.5 shadow-md transform rotate-12 group-hover:rotate-0 transition-transform duration-300">
-                <span className="text-xl">🎨</span>
-              </div>
+
  
               {/* Main Avatar Bubble */}
               <div className="relative z-0 h-64 w-64 md:h-72 md:w-72 rounded-full overflow-hidden border-8 border-white dark:border-slate-800 shadow-xl bg-gradient-to-b from-amber-100 to-emerald-50">
@@ -124,12 +80,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
                   referrerPolicy="no-referrer"
                   className="h-full w-full object-cover transform hover:scale-105 transition-transform duration-500"
                 />
-              </div>
- 
-              {/* Whimsical Polaroid Captain style shadow tag */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 py-1.5 px-5 rounded-xl shadow-lg text-xs font-mono tracking-wide text-zinc-500 flex items-center gap-2 whitespace-nowrap">
-                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
-                Aseel_Visual_Dev_V3.91
               </div>
             </div>
           </div>
@@ -141,11 +91,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
       <section id="traits" className="space-y-6">
         <div className="text-center md:text-left">
           <h2 className="text-3xl font-bold font-sans tracking-tight">
-            ⚡ Brainwaves & Narrative Quirks
+            ⚡ Traits and Quirks
           </h2>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-            Toggle through the core creative traits that drive my everyday coding and collaboration adventures.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
@@ -219,7 +166,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
                       />
                     </div>
                   </div>
-
                   <div className="pt-4 space-y-3">
                     <h3 className="text-2xl font-bold font-sans text-amber-500 dark:text-amber-400">
                       {selectedTrait.name} ({selectedTrait.percentage}%)
@@ -229,19 +175,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
                     </p>
                   </div>
                 </div>
-
-                {/* Micro dashboard status data */}
-                <div className="mt-6 pt-4 border-t border-dashed border-zinc-200 dark:border-zinc-800 flex items-center justify-between text-[10px] font-mono text-slate-400">
-                  <div className="flex items-center gap-1.5">
-                    <Terminal className="h-3.5 w-3.5 text-emerald-400" />
-                    <span>STATUS: HIGH_MOMENTUM_LEVEL</span>
-                  </div>
-                  <span className="animate-pulse">● SIGNAL STEADY</span>
-                </div>
               </div>
             )}
           </div>
-
         </div>
       </section>
 

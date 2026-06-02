@@ -14,21 +14,6 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ isDark }) => {
 
   const filteredProjects = PROJECTS.filter(p => filter === 'all' || p.category === filter);
 
-  // Sound generator for clicks
-  const playClick = () => {
-    try {
-      const aud = new (window.AudioContext || (window as any).webkitAudioContext)();
-      const osc = aud.createOscillator();
-      const gain = aud.createGain();
-      osc.frequency.setValueAtTime(550, aud.currentTime);
-      gain.gain.setValueAtTime(0.08, aud.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.01, aud.currentTime + 0.1);
-      osc.connect(gain);
-      gain.connect(aud.destination);
-      osc.start();
-      osc.stop(aud.currentTime + 0.1);
-    } catch (_) {}
-  };
 
   // Mock mini metrics data for the Orbit Dashboard project preview
   const miniChartData = [
