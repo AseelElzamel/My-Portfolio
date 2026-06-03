@@ -1,13 +1,14 @@
 import { Trait, Passion, Project, Experience, Hobby } from './types';
+import avatarImg from './assets/images/whimsical_avatar_casual_1780339203339.png';
+import hobbiesImg from './assets/images/whimsical_hobbies_1780322435482.png';
 
 export const USER_INFO = {
   fullName: "Aseel",
   pronouns: "she/her",
   title: "Software Developer & QA Tester",
   tagline: "Building video games and animation clips where art meets clean code!",
-  avatar: "/src/assets/images/whimsical_avatar_casual_1780339203339.png",
-  rocketImg: "/src/assets/images/whimsical_rocket_canvas_1780339220988.png",
-  hobbiesImg: "/src/assets/images/whimsical_hobbies_1780322435482.png",
+  avatar: avatarImg,
+  hobbiesImg: hobbiesImg,
   bio: "I am a Software Developer passionate about crafting and testing interactive, and emotionally engaging Video Games and Simulators! I love working at the intersection of UI animations, vector simulations."
 };
 
