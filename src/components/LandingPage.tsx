@@ -13,10 +13,15 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
   const [showFunFact, setShowFunFact] = useState<number | null>(null);
 
   const funFacts = [
-    { emoji: "🌌", title: "Midnight Coder", text: "I write 90% of my cleanest animated math functions after the local clock strikes midnight." },
-    { emoji: "🎸", title: "Auditory Synthetist", text: "I built an audio synthesizer that triggers specific chime scales relative to canvas movement rates." },
-    { emoji: "🍕", title: "Pizza Optimizer", text: "Calculated the exact volumetric surface area ratio of cheese to marinara for peak flavor." },
-    { emoji: "✨", title: "Watercolor Sketcher", text: "Spent 4 hours in the quiet morning light attempting to paint forest mist with liquid ink." }
+    { emoji: "👩🏻‍🔧", title: "Soldering", text: "My passion for soldering grew during ESET. I enjoy working hands-on with electronics, and I never pass up an opportunity to build, repair, or prototype something new!"},
+    { emoji: "🎮", title: "Video Gaming", text: "I enjoy exploring new games and keeping up with industry trends. Gaming often inspires ideas for projects and helps me think about technology from a user's perspective."},
+    { emoji: "🧁", title: "Baking", text: "When I'm away from my computer, you'll often find me baking. It's a creative and relaxing way to recharge."},
+    { emoji: "🏃🏻‍♀️", title: "Running", text: "I never considered myself a runner until I joined a local running group. Now, I enjoy the challenge and the energy boost that comes with every run."},
+    { emoji: "🥾", title: "Hiking", text: "Hiking is one of my favorite ways to disconnect, clear my mind, and enjoy the outdoors."},
+    { emoji: "🎸", title: "Playing Guitar", text: "I'm a self-taught guitarist, and playing music has become one of my favorite creative outlets."},
+    { emoji: "🌱", title: "Planting", text: "My interest in gardening started with a single avocado seed and has since grown into a rewarding hobby!"},
+    { emoji: "🐝", title: "Learning a new Hobby", text: "I love trying new things and challenging myself to learn new skills. There's always another hobby waiting to spark my curiosity :)"}
+
   ];
 
   return (
@@ -71,7 +76,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
               <div className="absolute inset-2 border border-dotted border-amber-400/40 rounded-full animate-[spin_20s_linear_infinite_reverse]" />
               
 
- 
               {/* Main Avatar Bubble */}
               <div className="relative z-0 h-64 w-64 md:h-72 md:w-72 rounded-full overflow-hidden border-8 border-white dark:border-slate-800 shadow-xl bg-gradient-to-b from-amber-100 to-emerald-50">
                 <img 
@@ -138,7 +142,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
                 </div>
                 
                 <span className="text-xs font-mono opacity-80 group-hover:translate-x-1 duration-200 transition-transform">
-                  {trait.percentage}% ➔
+                ➔
                 </span>
               </button>
             ))}
@@ -147,28 +151,17 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
           {/* Feature Showcase Detail Card */}
           <div className="md:col-span-7">
             {selectedTrait && (
-              <div className={`p-6 md:p-8 rounded-3xl border-4 border-double h-full flex flex-col justify-between transition-all duration-500 ${
-                isDark 
-                  ? 'bg-slate-900/90 border-slate-800 shadow-xl text-white' 
-                  : 'bg-white border-zinc-200 text-slate-800 shadow-xl'
-              }`}>
+              <div className={`p-6 md:p-8 rounded-3xl border-4 border-double h-full flex flex-col justify-between transition-all duration-500 ${isDark ? 'bg-slate-900/90 border-slate-800 shadow-xl text-white' : 'bg-white border-zinc-200 text-slate-800 shadow-xl'}`}>
                 <div className="space-y-4">
                   {/* Gauge bar */}
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between text-xs font-mono text-zinc-500 uppercase">
-                      <span>Creative Momentum</span>
-                      <span>Focus Percent</span>
-                    </div>
-                    <div className="w-full h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden p-0.5 border dark:border-slate-700">
-                      <div 
-                        style={{ width: `${selectedTrait.percentage}%` }}
-                        className={`h-full rounded-full bg-gradient-to-r ${selectedTrait.color} transition-all duration-1000 ease-out`}
-                      />
+                      <span>{selectedTrait.name}</span>
                     </div>
                   </div>
                   <div className="pt-4 space-y-3">
                     <h3 className="text-2xl font-bold font-sans text-amber-500 dark:text-amber-400">
-                      {selectedTrait.name} ({selectedTrait.percentage}%)
+                      {selectedTrait.name}
                     </h3>
                     <p className={`text-sm leading-relaxed ${isDark ? 'text-zinc-300' : 'text-zinc-600'}`}>
                       {selectedTrait.description}
@@ -189,8 +182,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
           isDark ? 'bg-slate-900/40 border-slate-800' : 'bg-white border-zinc-200/80'
         }`}>
           <div>
-            <h3 className="text-2xl font-bold font-sans">🌿 My Core Fuel Cells</h3>
-            <p className="text-xs text-zinc-500 mt-1">These are the creative vectors that structure my daily learning checklists.</p>
+            <h3 className="text-2xl font-bold font-sans">🌿 Education</h3>
           </div>
 
           <div className="space-y-4">
@@ -208,7 +200,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
                     className="p-3 rounded-xl flex items-center justify-center shrink-0 border dark:border-slate-800 font-bold"
                   >
                     <span className="text-lg">
-                      {index === 0 ? '💻' : index === 1 ? '🔊' : '👥'}
+                      {index === 0 ? '👩🏻‍💻' : index === 1 ? '👩🏻‍🔧' : '📚'}
                     </span>
                   </div>
                   <div className="space-y-1">
@@ -226,8 +218,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
           isDark ? 'bg-slate-900/40 border-slate-800' : 'bg-[#FAF7F2] border-zinc-200/80'
         }`}>
           <div className="space-y-2">
-            <h3 className="text-2xl font-bold font-sans">🍿 Quirky Log Entries</h3>
-            <p className="text-xs text-zinc-500">Every visual creator needs a playful sketchbook. Click tags to unlock full records!</p>
+            <h3 className="text-2xl font-bold font-sans">🍿 Things you'll find me doing on my free time</h3>
           </div>
 
           <div className="grid grid-cols-2 gap-3 flex-grow my-4">
@@ -236,7 +227,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
                 key={idx}
                 onClick={() => {
                   setShowFunFact(showFunFact === idx ? null : idx);
-                  playBeep(200 + idx * 80, 0.08, 'sine');
                 }}
                 className={`p-3 rounded-2xl border text-left cursor-pointer transition-all duration-300 flex flex-col justify-between relative overflow-hidden group select-none ${
                   showFunFact === idx
@@ -246,7 +236,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
               >
                 <div className="flex items-center justify-between text-lg z-10">
                   <span>{fact.emoji}</span>
-                  <span className="text-[9px] font-mono tracking-wider opacity-60">NOTE_#{102 + idx}</span>
                 </div>
                 <div className="pt-2 z-10">
                   <h4 className="text-xs font-extrabold font-sans leading-tight group-hover:text-amber-500 dark:group-hover:text-amber-400">
@@ -266,8 +255,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
           </div>
 
           <div className="text-[10px] font-mono text-zinc-500/80 text-center flex items-center justify-center gap-1.5 border-t border-dashed border-zinc-200 dark:border-zinc-800 pt-3">
-            <UserCheck className="h-3 w-3 text-emerald-500" />
-            <span>Compiled strictly in the spirit of play & creativity</span>
           </div>
         </div>
 
@@ -276,8 +263,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
       {/* 4. VISUALLY IMMERSIVE RETRO FRAMES FOR MEMORIES / TEAM WORKSHOPS */}
       <section className="space-y-6">
         <div className="text-center md:text-left">
-          <h2 className="text-2xl font-bold font-sans">📸 Polaroids & Event Placeholders</h2>
-          <p className="text-xs text-zinc-500 mt-1">Real framed layouts dedicated for student projects, team collaborations, and tech workshops.</p>
+          <h2 className="text-2xl font-bold font-sans">📸 Polaroids from previous Tech Events</h2>
+          <p className="text-xs text-zinc-500 mt-1">A collection of moments captured at conferences, hackathons, workshops, and networking events throughout my tech journey</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -288,13 +275,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
               {/* Abstract layout resembling visual team placeholder */}
               <div className="absolute inset-4 rounded border border-dashed border-emerald-400/30 flex flex-col items-center justify-center text-center p-4">
                 <span className="text-3xl filter saturate-50 animate-pulse">👥</span>
-                <span className="text-xs font-bold font-sans mt-2 dark:text-zinc-300">[ Team Photo Space ]</span>
-                <span className="text-[10px] font-mono text-zinc-400 mt-1">Hackathon brainstorming crew</span>
+                <span className="text-xs font-bold font-sans mt-2 dark:text-zinc-300">[ Hackathon team pic ]</span>
               </div>
             </div>
             <div className="pt-2 text-center border-t border-dashed border-zinc-300/40">
-              <h4 className="font-handwriting text-base font-bold text-slate-800 dark:text-slate-100 font-sans tracking-tight">"Midnight Pizza Hack 2025"</h4>
-              <p className="text-[10px] font-mono text-emerald-600 mt-1">36 hours of code & laughs</p>
+              <h4 className="font-handwriting text-base font-bold text-slate-800 dark:text-slate-100 font-sans tracking-tight">"Hackathon 2025"</h4>
+              <p className="text-[10px] font-mono text-emerald-600 mt-1">16 hours of code & laughs</p>
             </div>
           </div>
 
@@ -303,13 +289,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
             <div className="relative aspect-[4/3] w-full rounded border-2 border-zinc-100 bg-amber-50/40 dark:bg-slate-950 flex flex-col items-center justify-center overflow-hidden">
               <div className="absolute inset-4 rounded border border-dashed border-amber-400/30 flex flex-col items-center justify-center text-center p-4">
                 <span className="text-3xl filter saturate-50 animate-bounce">🎙️</span>
-                <span className="text-xs font-bold font-sans mt-2 dark:text-zinc-300">[ Workshop Event ]</span>
-                <span className="text-[10px] font-mono text-zinc-400 mt-1">Presenting React Anim-Canvas</span>
+                <span className="text-xs font-bold font-sans mt-2 dark:text-zinc-300">[ Iceberge ASV ]</span>
               </div>
             </div>
             <div className="pt-2 text-center border-t border-dashed border-zinc-300/40">
-              <h4 className="font-handwriting text-base font-bold text-slate-800 dark:text-slate-100 font-sans tracking-tight">"CSS Motion Sandbox Slide"</h4>
-              <p className="text-[10px] font-mono text-amber-600 mt-1">Educating 60 junior engineers</p>
+              <h4 className="font-handwriting text-base font-bold text-slate-800 dark:text-slate-100 font-sans tracking-tight">"Boat testing"</h4>
+              <p className="text-[10px] font-mono text-amber-600 mt-1">10 Months of prgramming and Testing the oat</p>
             </div>
           </div>
 
@@ -318,13 +303,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
             <div className="relative aspect-[4/3] w-full rounded border-2 border-zinc-100 bg-sky-50/40 dark:bg-slate-950 flex flex-col items-center justify-center overflow-hidden">
               <div className="absolute inset-4 rounded border border-dashed border-sky-400/30 flex flex-col items-center justify-center text-center p-4">
                 <span className="text-3xl filter saturate-50 animate-spin duration-3000">🏡</span>
-                <span className="text-xs font-bold font-sans mt-2 dark:text-zinc-300">[ Sandbox Workspace ]</span>
-                <span className="text-[10px] font-mono text-zinc-400 mt-1">Plants, mechanical keys, espresso</span>
+                <span className="text-xs font-bold font-sans mt-2 dark:text-zinc-300">[ Soldering workshop ]</span>              
               </div>
             </div>
             <div className="pt-2 text-center border-t border-dashed border-zinc-300/40">
-              <h4 className="font-handwriting text-base font-bold text-slate-800 dark:text-slate-100 font-sans tracking-tight">"The Creative studio desk"</h4>
-              <p className="text-[10px] font-mono text-sky-600 mt-1">Where creative apps are built</p>
+              <h4 className="font-handwriting text-base font-bold text-slate-800 dark:text-slate-100 font-sans tracking-tight">"Soldering Projects"</h4>
+              <p className="text-[10px] font-mono text-sky-600 mt-1">Months of soldering and building electronic projects</p>
             </div>
           </div>
 

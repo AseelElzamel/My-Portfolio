@@ -71,7 +71,7 @@ export default function App() {
           {/* Whimsical Logo Identity */}
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-amber-400 to-emerald-400 flex items-center justify-center font-bold text-slate-900 border shadow-sm">
-              🎈
+              👩🏻
             </div>
             <div className="leading-none">
               <span className="font-display font-extrabold text-base tracking-tight hover:text-amber-500 transition cursor-pointer">

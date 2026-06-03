@@ -30,17 +30,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ isDark }) => {
       {/* HEADER SECTION & CATEGORY FILTER */}
       <section className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-dashed border-zinc-200 dark:border-zinc-800 pb-8">
         <div>
-          <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold font-mono tracking-wider uppercase border ${
-            isDark ? 'bg-indigo-400/10 text-indigo-300 border-indigo-400/20' : 'bg-[#EAFDF5] text-emerald-800 border-[#A7F3D0]'
-          }`}>
-            <Code2 className="h-3 w-3 text-emerald-500" /> Art Forge Core active
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold font-sans tracking-tight mt-2">
-            🛠️ Created Projects & Experiments
-          </h2>
-          <p className="text-sm text-zinc-500 mt-1">
-            Browse through my interactive products, open-source utilities, and visual crafts.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold font-sans tracking-tight mt-2">🛠️ Created Projects</h2>
+          <p className="text-sm text-zinc-500 mt-1">Browse through my hands-on interactive projects</p>
         </div>
 
         {/* Filter station dials */}
@@ -51,7 +42,6 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ isDark }) => {
               id={`filter-btn-${cat}`}
               onClick={() => {
                 setFilter(cat);
-                playClick();
               }}
               className={`px-3.5 py-1.5 rounded-xl text-xs font-bold font-sans capitalize transition-all duration-300 cursor-pointer ${
                 filter === cat
@@ -63,7 +53,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ isDark }) => {
                     : 'bg-[#FCFAF2] border border-[#DFD9C3] text-slate-700 hover:bg-white'
               }`}
             >
-              {cat === 'all' ? '🌟 All Forge' : cat === 'code' ? '💻 Interactive Code' : cat === 'design' ? '🎨 UI/UX Design' : '🎨 Creative Crafts'}
+              {cat === 'all' ? '🌟 All Projects' : cat === 'code' ? '💻 Software Projects' : cat === 'design' ? '👩🏻‍🔧 Hardware Projects' : '🎨 Experimental Projects'}
             </button>
           ))}
         </div>
@@ -83,7 +73,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ isDark }) => {
           >
             {/* Visual Screen Preview Frame */}
             <div className={`relative h-44 w-full flex items-center justify-center border-b ${
-              isDark ? 'bg-slate-950 border-slate-800' : 'bg-[#FAF8F5] border-zinc-100'
+              isDark ? 'bg-zinc-0 border-slate-800' : 'bg-[#FAF8F5] border-zinc-100'
             }`}>
               
               {/* Window controls (Mac style) */}
@@ -93,7 +83,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ isDark }) => {
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
               </div>
               <span className="absolute top-2.5 right-3 text-[9px] font-mono opacity-50 tracking-wide">
-                STUDIO_VIEWPORT_{project.id.toUpperCase()}
+                {project.id.toUpperCase()}
               </span>
 
               {/* LIVE MINI PREVIEW OF EACH PROJECT CONCEPT WITHOUT BROKEN JPG LINK SENSITURES */}
@@ -101,41 +91,18 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ isDark }) => {
                 
                 {project.image === 'canvas' && (
                   <div className="relative w-full h-full flex flex-col items-center justify-center text-center">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(56,189,248,0.15)_0,transparent_100%)]" />
-                    <div className="space-y-1">
-                      {/* Interactive dot stream floating simulation on hover */}
-                      <div className="flex gap-2 justify-center py-1">
-                        <span className={`h-2.5 w-2.5 rounded-full bg-sky-400 animate-ping ${hoveredProject === 'nebulacanvas' ? 'duration-500' : 'duration-1000'}`} />
-                        <span className="h-2 w-2 rounded-full bg-amber-400 animate-pulse mt-1" />
-                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse mt-0.5" />
-                      </div>
-                      <div className="text-[10px] font-mono text-cyan-400 lowercase italic">glowDustEngine.start()</div>
-                      <div className="text-[9px] font-mono text-zinc-500">Organic wind drift speed: ACTIVE</div>
+                    <div className="absolute inset-0 bg-grid opacity-[0.1]" />
+                    <div className="z-10 text-center space-y-1.5">
+                      <span className="animate-bounce block text-lg font-bold">🚴🏻</span>
                     </div>
                   </div>
                 )}
 
                 {project.image === 'dashboard' && (
-                  <div className="w-full h-full flex flex-col justify-between">
-                    <div className="flex items-center justify-between text-[8px] font-mono text-emerald-400 border-b border-zinc-800 pb-1">
-                      <span>STREAK METER</span>
-                      <span>+12.8% WEEKaLY</span>
-                    </div>
-                    {/* Live miniature Recharts chart directly in the preview window! */}
-                    <div className="h-16 w-full opacity-90 mt-1">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <AreaChart data={miniChartData}>
-                          <defs>
-                            <linearGradient id="colorCommits" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="5%" stopColor="#10B981" stopOpacity={0.4}/>
-                              <stop offset="95%" stopColor="#10B981" stopOpacity={0}/>
-                            </linearGradient>
-                          </defs>
-                          <XAxis dataKey="name" hide />
-                          <YAxis hide />
-                          <Area type="monotone" dataKey="commits" stroke="#10B981" fillOpacity={1} fill="url(#colorCommits)" strokeWidth={1} />
-                        </AreaChart>
-                      </ResponsiveContainer>
+                  <div className="relative w-full h-full flex flex-col items-center justify-center text-center">
+                    <div className="absolute inset-0 bg-grid opacity-[0.1]" />
+                    <div className="z-10 text-center space-y-1.5">
+                      <span className="animate-bounce block text-lg font-bold">🔌</span>
                     </div>
                   </div>
                 )}
@@ -144,13 +111,10 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ isDark }) => {
                   <div className="relative w-full h-full flex flex-col items-center justify-center text-center">
                     <div className="absolute inset-0 bg-grid opacity-[0.1]" />
                     <div className="z-10 text-center space-y-1.5">
-                      <span className="animate-bounce block text-lg font-bold">🎈</span>
-                      <span className="text-[10px] font-mono text-amber-400 block tracking-wider uppercase font-bold">RETRO ARCADE ACTIVE</span>
-                      <div className="text-[8px] font-mono text-zinc-500">Touch sliders loaded</div>
+                      <span className="animate-bounce block text-lg font-bold">🚤</span>
                     </div>
                   </div>
                 )}
-
               </div>
             </div>
 
@@ -194,8 +158,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ isDark }) => {
       {/* INTERNSHIPS & WORK EXPERIENCE SECTION */}
       <section className="space-y-8">
         <div className="flex items-center gap-2">
-          <Briefcase className="h-6 w-6 text-amber-500" />
-          <h2 className="text-2xl font-bold font-sans tracking-tight">🎒 Professional Logs & Experience</h2>
+          <div className="h-6 w-6 text-amber-500" />
+          <h2 className="text-2xl font-bold font-sans tracking-tight">🎒 Professional Work Experience</h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -204,8 +168,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ isDark }) => {
               key={exp.id}
               className={`p-6 md:p-8 rounded-3xl border-2 relative overflow-hidden transition-all duration-300 hover:scale-[1.01] ${
                 isDark ? 'bg-slate-900/40 border-slate-800 text-white' : 'bg-[#FAF8F3]/60 border-[#DFD9C3] text-slate-800'
-              }`}
-            >
+              }`}>
+                
               {/* Corner badge element */}
               <div className="absolute top-0 right-0 h-12 w-12 bg-amber-200 dark:bg-slate-800 rotate-45 translate-x-6 -translate-y-6 opacity-30" />
 
@@ -253,7 +217,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ isDark }) => {
       </section>
 
       {/* TEAM INTERACTION & CAMPUS CONSTELLATION POLAROID FOR PROJECTS */}
-      <section className="p-6 md:p-8 rounded-3xl border-4 border-dashed border-zinc-300/40 bg-zinc-50/20 dark:bg-zinc-900/30">
+      {/* <section className="p-6 md:p-8 rounded-3xl border-4 border-dashed border-zinc-300/40 bg-zinc-50/20 dark:bg-zinc-900/30">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           <div className="lg:col-span-8 space-y-4">
@@ -271,7 +235,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ isDark }) => {
 
           <div className="lg:col-span-4 flex justify-center">
             {/* Custom framed visual of collaboration memory */}
-            <div className="p-3 bg-white dark:bg-slate-950 border rounded-2xl shadow-xl w-full max-w-xs transform -rotate-1 hover:rotate-0 transition duration-300 space-y-3">
+            {/* <div className="p-3 bg-white dark:bg-slate-950 border rounded-2xl shadow-xl w-full max-w-xs transform -rotate-1 hover:rotate-0 transition duration-300 space-y-3">
               <div className="w-full aspect-[4/3] bg-emerald-50/50 dark:bg-slate-900 rounded-lg flex flex-col items-center justify-center border border-dashed border-emerald-400/30 text-center p-4">
                 <span className="text-2xl">🌱</span>
                 <span className="text-[11px] font-bold mt-1.5 block">[ Hackathon Pitch memory ]</span>
@@ -284,7 +248,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ isDark }) => {
           </div>
 
         </div>
-      </section>
+      </section> */}
 
     </div>
   );

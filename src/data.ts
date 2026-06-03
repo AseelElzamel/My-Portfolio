@@ -40,71 +40,72 @@ export const TRAITS: Trait[] = [
 
 export const PASSIONS: Passion[] = [
   {
-    title: "Interactive UX Craft",
+    title: "Software Development Co-op",
     icon: "MousePointerClick",
     bgHex: "#FEF08A", // yellow-200
-    description: "Combining CSS-art, custom canvas contexts, and fluid modern spring animations to build things that feel completely tactile and alive."
+    description: "I did the software development co-op program at CNA, where I got to do 3 different work terms. I built many interactive websites, mobile games, and solved many real-world coding problems."
   },
   {
-    title: "Creative Audio & Synthesizers",
+    title: "Electronics Systems Engineering Technology Co-op (ESET)",
     icon: "Music",
     bgHex: "#BBF7D0", // green-200
-    description: "Generating beautiful audio waveforms directly inside the browser using Web Audio API nodes. Play, experiment, and relax!"
+    description: "I did the electronics systems engineering technology co-op program at CNA, where I designed and built electronic circuits, soldered many projects including radios and Multimeters, and tested various hardware components."
   },
   {
-    title: "Cooperative Learning",
+    title: "Experimental Education",
     icon: "Users2",
     bgHex: "#FED7AA", // orange-200
-    description: "Organizing coding workshops, recording tech explainers, and mentoring fellow students to foster an inclusive, vibrant web developer space."
+    description: "I self-studied many programming languages to become a more versatile developer and be able to build and testthe video games and animation clips as I always aspired to."
   }
 ];
 
 export const PROJECTS: Project[] = [
   {
-    id: "nebulacanvas",
-    title: "Aurora Paint Pro",
+    id: "Capstone Project",
+    title: "Bicycle NL",
     role: "Lead Creator & UI Engineer",
-    period: "Spring 2026",
-    description: "A highly creative browser drawing app where your cursor draws lines of glowing watercolor energy, complete with organic physics guides and audio synthesizer feedback.",
-    tech: ["React", "HTML5 Canvas", "Web Audio API", "Tailwind CSS"],
+    period: "Winter 2026",
+    description: "Designed and developed a custom website for a local cycling club, enabling members to register, manage memberships, and stay informed about upcoming events and club activities.",
+    tech: ["HTML", "CSS", "JavaScript", "React", "Netlify", "Sanity.io"],
     achievements: [
-      "Custom procedural generation handles 10,000 active color nodes at 60 FPS.",
-      "Embedded spatialized sound synthesis based on mouse speed and vertical grid coordinate.",
-      "Highly interactive layout with modern butter-yellow dial controls."
+      "Led the design and front-end development of a fully functional website in a collaborative team environment.",
+      "Implemented membership registration and event information features to improve accessibility for club members.",
+      "Presented the completed project to club members and stakeholders, showcasing the website's functionality and impact."
     ],
     image: "canvas",
     category: "code"
   },
   {
-    id: "orbitanalytics",
-    title: "Bloom Team Workspace Dashboard",
-    role: "Full-Stack Dev Intern",
-    period: "Winter 2025",
-    description: "A clean metrics control deck showing developer contribution counts, team project progress, and collaborative activity milestones.",
-    tech: ["TypeScript", "Recharts", "Lucide Icons", "Express.js"],
+    id: "Electronics Assembly Project",
+    title: "Digital Multimeter",
+    role: "Assembler & Soldering Technician",
+    period: "Winter 2023",
+    description: "Assembled and soldered a functional digital multimeter from a component kit, applying electronic assembly techniques and attention to detail to ensure accurate operation.",
+    tech: ["Soldering", "Electronics", "Circuit Testing"],
     achievements: [
-      "Designed dynamic team workspace view with micro-motion feedback.",
-      "Maintained modular state, syncing visual elements elegantly.",
-      "Optimized load times under 300ms using server-side caching."
+      "Successfully soldered and assembled all electronic components onto a printed circuit board.",
+      "Performed testing and troubleshooting to verify proper functionality and measurement accuracy.",
+      "Developed hands-on experience with electronic circuits, component identification, and precision soldering techniques."
     ],
     image: "dashboard",
     category: "design"
   },
   {
-    id: "retroexplorer",
-    title: "Watercolor Origami Land",
-    role: "Sole Indie Developer",
-    period: "Autumn 2024",
-    description: "A fully responsive mini retro game experience with playful organic vectors, custom vector collision algorithms, and wind simulations.",
-    tech: ["TypeScript", "HTML5 Canvas", "CSS Transitions", "Local Storage"],
-    achievements: [
-      "Crafted full mobile touch gameplay controls with dynamic wind glider handles.",
-      "Over 1,200 unique origami designs compiled and persistently stored in local memory.",
-      "Implemented beautiful procedural constellation connector."
-    ],
+    id: "Autonomous Surface vehicle",
+    title: "Autonomous Surface Vessel",
+    role: "Software Engineer",
+    period: "2026 - Present",
+    description: "Collaborating with a multidisciplinary team of engineering students to develop an autonomous surface vessel capable of navigating waterways independently. As part of the software team, I contribute to the development of navigation and obstacle-detection systems that enable the vessel to identify and avoid buoys while operating autonomously.",
+    tech: ["Python", "Computer Vision", "Embedded Systems", "Autonomous Navigation", "Git"],
+  achievements: [
+    "Collaborate with mechanical, electrical, and software engineering students to design and develop an autonomous vessel.",
+    "Contribute to software systems responsible for buoy detection, navigation, and obstacle avoidance.",
+    "Support the integration and testing of autonomous features in real-world water environments.",
+    "Apply problem-solving and teamwork skills within a large-scale interdisciplinary engineering project."
+  ],
     image: "game",
     category: "creative"
-  }
+  },
 ];
 
 export const EXPERIENCES: Experience[] = [

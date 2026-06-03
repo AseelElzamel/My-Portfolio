@@ -180,11 +180,6 @@ export const HobbiesPage: React.FC<HobbiesPageProps> = ({ isDark }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           <div className="lg:col-span-7 space-y-4">
-            <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold font-mono tracking-wider uppercase border ${
-              isDark ? 'bg-amber-400/10 text-amber-300 border-amber-400/20' : 'bg-amber-100 text-amber-800 border-amber-200'
-            }`}>
-              <Camera className="h-3 w-3 text-amber-500" /> Playful interests cabin
-            </span>
             <h2 className="text-3xl font-bold font-sans tracking-tight">🪐 Music, Travel & Sketched Patterns Sandbox</h2>
             <p className="text-sm text-zinc-500 leading-relaxed">
               When I close my visual IDE, I explore completely different canvases. I am fascinated by digital modular synthesizer waveforms, retro physics arcade gameplay, vintage analog photography, and hiking into dense state parks to capture the silent natural mist on vintage analog sheets.
@@ -199,9 +194,6 @@ export const HobbiesPage: React.FC<HobbiesPageProps> = ({ isDark }) => {
                 referrerPolicy="no-referrer"
                 className="h-full w-full object-cover transform hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-3 text-center">
-                <span className="text-[10px] font-mono tracking-wider text-amber-300 font-bold uppercase">"Melodic Chords & Analog Gear"</span>
-              </div>
             </div>
           </div>
 
@@ -221,7 +213,7 @@ export const HobbiesPage: React.FC<HobbiesPageProps> = ({ isDark }) => {
                 : 'border-transparent text-zinc-400 hover:text-zinc-600'
             }`}
           >
-            <Music className="h-4 w-4" /> Sound Wave Sandbox
+            <Music className="h-4 w-4" /> Software Projects
           </button>
           
           <button
@@ -232,7 +224,7 @@ export const HobbiesPage: React.FC<HobbiesPageProps> = ({ isDark }) => {
                 : 'border-transparent text-zinc-400 hover:text-zinc-600'
             }`}
           >
-            <Gamepad2 className="h-4 w-4" /> Pattern Connector Game
+            <Gamepad2 className="h-4 w-4" /> Hardware Projects
           </button>
 
           <button
@@ -243,7 +235,7 @@ export const HobbiesPage: React.FC<HobbiesPageProps> = ({ isDark }) => {
                 : 'border-transparent text-zinc-400 hover:text-zinc-600'
             }`}
           >
-            <Camera className="h-4 w-4" /> Creative Polaroid Gallery
+            <Camera className="h-4 w-4" /> Experimental Projects
           </button>
         </div>
 
@@ -283,23 +275,15 @@ export const HobbiesPage: React.FC<HobbiesPageProps> = ({ isDark }) => {
                   ))}
                 </div>
               </div>
-
-              {/* Status footer tag */}
-              <div className="bg-zinc-50 dark:bg-slate-950/40 p-3.5 rounded-2xl border flex items-center gap-2.5 text-xs text-zinc-500">
-                <Info className="h-4 w-4 text-amber-500 shrink-0" />
-                <span>Zero audio downloads needed - compiled mathematically via oscillator hardware frequencies.</span>
-              </div>
             </div>
 
             {/* Synthesizer Interactive Pad Dashboard */}
             <div className={`lg:col-span-7 p-6 rounded-3xl border-2 flex flex-col justify-between gap-6 ${
               isDark ? 'bg-slate-900/60 border-slate-800' : 'bg-white border-zinc-200'
             }`}>
-              <div className="text-center font-mono text-[9px] text-zinc-400 border-b pb-2 tracking-widest uppercase">
-                CREATIVE_SCALE_OCTAVE_C4
-              </div>
 
-              {/* Keyboards visual grids */}
+
+              {/* Keyboards visual grids
               <div className="grid grid-cols-4 sm:grid-cols-8 gap-3">
                 {padFrequencies.map((freq, idx) => {
                   const notes = ["C4", "D4", "E4", "F4", "G4", "A4", "B4", "C5"];
@@ -326,12 +310,12 @@ export const HobbiesPage: React.FC<HobbiesPageProps> = ({ isDark }) => {
                     </button>
                   );
                 })}
-              </div>
+              </div> */}
 
               {/* Dynamic waveform visualizer loop indicator box */}
-              <div className="h-10 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-around overflow-hidden relative p-1.5 shadow-inner">
+              {/* <div className="h-10 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-around overflow-hidden relative p-1.5 shadow-inner">
                 <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-emerald-500/10 to-transparent w-16" />
-                {/* 10 columns of moving wave heights */}
+                {10 columns of moving wave heights }
                 {[...Array(16)].map((_, wIdx) => {
                   const activeHeight = synthFrequency > 0 ? (3 + (wIdx % 4) * (synthFrequency / 100)) % 100 : 10;
                   return (
@@ -342,10 +326,8 @@ export const HobbiesPage: React.FC<HobbiesPageProps> = ({ isDark }) => {
                     />
                   );
                 })}
-                <div className="absolute right-3.5 text-[8px] font-mono text-slate-400 uppercase tracking-widest bg-slate-950/80 px-2 rounded">
-                  Active tone: {Math.round(synthFrequency)}Hz
-                </div>
-              </div>
+
+              </div> */}
             </div>
 
           </div>
@@ -367,10 +349,6 @@ export const HobbiesPage: React.FC<HobbiesPageProps> = ({ isDark }) => {
 
               {/* Game statistics dashboard widget */}
               <div className="space-y-2 border-2 border-dashed border-zinc-200 dark:border-slate-800 p-4 rounded-2xl bg-zinc-50/50 dark:bg-slate-950/20">
-                <div className="flex items-center justify-between text-xs font-mono text-slate-400 uppercase">
-                  <span>Pattern Mission</span>
-                  <span>Active Progress</span>
-                </div>
                 <div className="flex justify-between items-center text-sm font-bold pt-2 border-t border-dotted">
                   <span>Stars Collected:</span>
                   <span className="text-yellow-500 font-extrabold">{starsCollected} / 5</span>
