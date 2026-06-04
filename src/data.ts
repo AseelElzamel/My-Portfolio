@@ -5,7 +5,7 @@ import hobbiesImg from './assets/images/Hobbies2.jpeg';
 export const USER_INFO = {
   fullName: "Aseel",
   pronouns: "she/her",
-  title: "Software Developer & QA Tester",
+  title: "Software/ Game Developer & QA Tester",
   tagline: "Building video games and animation clips where art meets clean code!",
   avatar: avatarImg,
   hobbiesImg: hobbiesImg,
@@ -30,7 +30,7 @@ export const TRAITS: Trait[] = [
     description: "I love meeting new people, having lots of hobbies, connecting with nature, and baking cinnamon rolls from time to time! I genrally am a person who enjoys learning new things in all aspects of life!"
   },
   {
-    id: "explorer",
+    id: "Hobbies",
     name: "Hobbies related to tech",
     icon: "Compass",
     color: "from-rose-400 to-amber-500",

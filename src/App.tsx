@@ -59,8 +59,7 @@ export default function App() {
         isDark 
           ? 'bg-[#0B0F19]' 
           : 'bg-[#FAF7F2]'
-      }`}
-    >
+      }`}>
       {/* Background Star field */}
       {renderBackgroundStars()}
 
@@ -70,7 +69,7 @@ export default function App() {
           
           {/* Whimsical Logo Identity */}
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-amber-400 to-emerald-400 flex items-center justify-center font-bold text-slate-900 border shadow-sm">
+            <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-yellow-200 to-orange-400 flex items-center justify-center font-bold text-slate-900 border shadow-sm">
               👩🏻
             </div>
             <div className="leading-none">
@@ -86,8 +85,7 @@ export default function App() {
               onClick={() => executeWarpTransitTo('about')}
               className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer ${
                 currentPage === 'about'? 'bg-amber-400 text-slate-950 font-extrabold shadow-sm': 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-zinc-100'
-              }`}
-            >
+              }`}>
               About
             </button>
             <button
@@ -96,8 +94,7 @@ export default function App() {
                 currentPage === 'projects'
                   ? 'bg-amber-400 text-slate-950 font-extrabold shadow-sm'
                   : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-zinc-100'
-              }`}
-            >
+              }`}>
               Projects
             </button>
             <button
@@ -106,8 +103,7 @@ export default function App() {
                 currentPage === 'hobbies'
                   ? 'bg-amber-400 text-slate-950 font-extrabold shadow-sm'
                   : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-zinc-100'
-              }`}
-            >
+              }`}>
               Hobbies and Interests
             </button>
           </nav>
@@ -125,6 +121,37 @@ export default function App() {
           {renderPageContent()}
         </div>
       </main>
+
+          {/* Traditional Inline bottom Navbar */}
+          <div className="flex justify-center">
+            <nav className="flex items-center gap-1 bg-zinc-100/80 dark:bg-slate-900/80 p-1 rounded-xl border border-zinc-200/50 dark:border-slate-800/80 shadow-sm">
+              <button
+                onClick={() => executeWarpTransitTo('about')}
+                className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer ${
+                  currentPage === 'about'? 'bg-amber-400 text-slate-950 font-extrabold shadow-sm': 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-zinc-100'
+                }`}>
+                About
+              </button>
+              <button
+                onClick={() => executeWarpTransitTo('projects')}
+                className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer ${
+                  currentPage === 'projects'
+                    ? 'bg-amber-400 text-slate-950 font-extrabold shadow-sm'
+                    : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-zinc-100'
+                }`}>
+                Projects
+              </button>
+              <button
+                onClick={() => executeWarpTransitTo('hobbies')}
+                className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer ${
+                  currentPage === 'hobbies'
+                    ? 'bg-amber-400 text-slate-950 font-extrabold shadow-sm'
+                    : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-850 dark:hover:text-zinc-100'
+                }`}>
+                Hobbies and Interests
+              </button>
+            </nav>
+          </div>
     </div>
   );
 }
