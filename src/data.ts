@@ -1,6 +1,6 @@
 import { Trait, Passion, Project, Experience, Hobby } from './types';
-import avatarImg from './assets/images/whimsical_avatar_casual_1780339203339.png';
-import hobbiesImg from './assets/images/whimsical_hobbies_1780322435482.png';
+import avatarImg from './assets/images/pfp.png';
+import hobbiesImg from './assets/images/Hobbies2.jpeg';
 
 export const USER_INFO = {
   fullName: "Aseel",
@@ -93,7 +93,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "Autonomous Surface vehicle",
-    title: "Autonomous Surface Vessel",
+    title: "Autonomous Surface vehicle",
     role: "Software Engineer",
     period: "2026 - Present",
     description: "Collaborating with a multidisciplinary team of engineering students to develop an autonomous surface vessel capable of navigating waterways independently. As part of the software team, I contribute to the development of navigation and obstacle-detection systems that enable the vessel to identify and avoid buoys while operating autonomously.",
@@ -111,29 +111,43 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCES: Experience[] = [
   {
-    id: "creative-labs",
-    company: "Studio Bloom Inc.",
-    role: "Creative UI Engineering Intern",
-    period: "June 2025 - Present",
-    description: "Pioneered interactive landing experiences and spearheaded design system modules using modern Tailwind configurations.",
-    skills: ["React", "Motion", "Tailwind CSS", "Semantic UI"],
+    id: "wt3",
+    company: "TechNL (Work-term 3)",
+    role: "Student Team Coordinator",
+    period: "May 2025 - Present",
+    description: "Directed visual concept, layout design, and frontend interactivity for our grand-prize award winning web dashboard, 'EchoCanvas'.",
+    skills: ["AI Tools", "JavaScript", "HTML", "CSS", "Project Management", "Team Leadership"],
     achievements: [
-      "Designed and integrated over 30 fluid animations increasing user scroll engagement by 40%.",
-      "Drafted standard typography hierarchy guides followed across three full-stack projects.",
-      "Collaborated globally with 5 designers in Figma-to-code translations."
+      "Short-Listed highschool student applications and coordinated a team of 25 highschool students to get exposure on real-world tech project in Tech companies.",
+      "Regularly met with Students and their mentors to discuss project requirements and progress.",
+      "Programmed different Projects including a personal Portfolio, a video Game, and a short animation clip."
     ]
   },
   {
-    id: "creative-hackathon",
-    company: "University Hackathon",
-    role: "Lead Interactive Designer",
-    period: "February 2025",
+    id: "wt2",
+    company: "The College of the North Atlantic - AI Garage",
+    role: "Programming Lead (Work-term 2)",
+    period: "Feb 2025 - May 2025",
+    description: "Pioneered interactive landing experiences and spearheaded design system modules using modern Tailwind configurations.",
+    skills: [ "Team Leadership", "BotPress", "AI Chatbots", "UX Design", "Project Management"],
+    achievements: [
+      "Developed AI government services chatbot with my team to provide citizens with instant access to government service information using BotPress",
+      "Led phases including research, planning, and prototype development to align with user needs and project feasibility",
+      "Troubleshooted and refined chatbot performance.",
+      "Collaborated with teammates across other areas in the project."
+    ]
+  },
+  {
+    id: "wt1",
+    company: "The Office of Applied Research and Innovation",
+    role: "Web Developer/ Researcher (work-term 1)",
+    period: "May 2024 - Aug 2024",
     description: "Directed visual concept, layout design, and frontend interactivity for our grand-prize award winning web dashboard, 'EchoCanvas'.",
     skills: ["React", "Websockets", "Figma", "Creative Sound"],
     achievements: [
-      "Designed an immersive collaborative canvas lobby connecting up to 100 synchronized users synchronously in 48 hours.",
-      "Created cohesive retro-playful visuals with soft warm pastel tones and whimsical watercolor bubbles.",
-      "Won the 'Most Memorable Interaction' and 'Grand Prize' from over 85 engineering entries."
+      "Developed and tested web applications using HTML, CSS, and JavaScript.",
+      "Ensured software quality through troubleshooting and resolving coding issues",
+      "Collaborated with clients to gather requirements and troubleshoot issues."
     ]
   }
 ];

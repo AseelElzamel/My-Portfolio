@@ -128,8 +128,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ isDark }) => {
                     : isDark
                       ? 'bg-slate-900/60 border-slate-800 text-slate-300 hover:bg-slate-800 hover:text-white'
                       : 'bg-white border-zinc-200/80 text-zinc-700 hover:bg-zinc-50 hover:border-zinc-300'
-                }`}
-              >
+                }`}>
                 <div className="flex items-center gap-3">
                   <div className={`p-2.5 rounded-xl border font-bold capitalize text-sm ${
                     selectedTrait?.id === trait.id 
